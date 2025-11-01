@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-	<?php include __DIR__ . '/../templates/head.php'; ?>
+	<!--#include virtual="/_templates/head.html" -->
 
 	<!-- Page information. -->
 	<title>Nathan Campos</title>
@@ -100,6 +100,6 @@
 		<a href="<?= href('/meta/#why-so-slow') ?>">meta page</a>.</p>
 	</div>
 
-	<?php include_template('footer'); ?>
+	<!--#include virtual="/_templates/footer.asp" -->
 </body>
 </html>
