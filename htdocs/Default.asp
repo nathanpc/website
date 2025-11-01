@@ -9,20 +9,16 @@
 </head>
 <body>
 	<!--#include virtual="/_templates/header.asp" -->
+	<!--#include virtual="/_includes/compat.asp" -->
 
 	<div class="section">
 		<h2>about me</h2>
 
 		<p>
-			<?= compat_image('/assets/images/nathan/profile.jpg',
-					'A picture of me smiling with my workbench as the ' .
-					'background',
-					array(
-						'width' => '200px',
-						'height' => '200px',
-						'style' => 'float: left; padding-right: 10px;'
-					))
-			?>
+			<% CompatImageWithProps "/assets/images/nathan/profile.jpg", _
+					"A picture of me smiling with my workbench as the background", _
+					"width=""200px"" height=""200px"" " & _
+					"style=""float: left; padding-right: 10px;""" %>
 
 			I'm a <b>full-stack developer</b>, <b>creative technologist</b> and
 			an <b>electronics engineer</b> born in rainy
