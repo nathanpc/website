@@ -8,7 +8,7 @@
 	<meta name="description" content="Nathan's personal corner of the internet, fully compatible with everything, filled with useless information.">
 </head>
 <body>
-	<?php include_template('header'); ?>
+	<!--#include virtual="/_templates/header.asp" -->
 
 	<div class="section">
 		<h2>about me</h2>
@@ -23,7 +23,6 @@
 						'style' => 'float: left; padding-right: 10px;'
 					))
 			?>
-			<?php if (compat_isconsole()) { echo '<p></p>'; } ?>
 
 			I'm a <b>full-stack developer</b>, <b>creative technologist</b> and
 			an <b>electronics engineer</b> born in rainy
@@ -97,7 +96,7 @@
 		definitely should not have a public IP on the internet. Did I mention
 		the reason for this website to exist is for me to have fun? You can
 		learn more about why this website is so slow on its
-		<a href="<?= href('/meta/#why-so-slow') ?>">meta page</a>.</p>
+		<a href="/meta/#why-so-slow">meta page</a>.</p>
 	</div>
 
 	<!--#include virtual="/_templates/footer.asp" -->
