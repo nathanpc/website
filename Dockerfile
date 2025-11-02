@@ -8,7 +8,7 @@ RUN apk update && apk add \
 
 RUN rm -r /var/www/localhost/htdocs/*
 
-RUN sed -zie 's|\(<Directory "/var/www/localhost/htdocs">\)\(.*\)\(</Directory>\)|\1\nOptions Indexes\nAllowOverride All\nRequire all granted\n\3|g' /etc/apache2/httpd.conf && \
+RUN sed -zie 's|\(<Directory "/var/www/localhost/htdocs">\)\(.*\)\(</Directory>\)|\1\nOptions Indexes FollowSymLinks MultiViews\nAllowOverride All\nRequire all granted\n\3|g' /etc/apache2/httpd.conf && \
 	sed -ie 's|/var/www/localhost/htdocs|/app/htdocs|g' /etc/apache2/httpd.conf
 
 WORKDIR /app
