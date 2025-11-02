@@ -66,6 +66,7 @@ foreach (@entries) {
 			open(my $fh, '<', $dir . '/post.txt');
 			my $title = <$fh>;
 			chomp $title;
+			$title =~ s/\r//g;
 			close($fh);
 
 			# Print post entry.

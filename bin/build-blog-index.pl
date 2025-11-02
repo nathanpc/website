@@ -75,7 +75,8 @@ foreach (@entries) {
 			open(my $fh, '<', $dir . '/index.php');
 			while (my $line = <$fh>) {
 				chomp $line;
-				if ($line =~ m/^\s*<title>(?<title>.+)<\/title>$/i) {
+				print "LINE: $line\n";
+				if ($line =~ m/^\s*<title>(?<title>.+)<\/title>/i) {
 					$title = $+{title};
 					last;
 				}
