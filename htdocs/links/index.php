@@ -51,6 +51,7 @@
 					<li><a href="#prog-cvs">CVS (Concurrent Versions System)</a></li>
 					<li><a href="#prog-docker">Docker</a></li>
 					<li><a href="#prog-sockets">Sockets</a></li>
+					<li><a href="#prog-java">Java</a></li>
 				</ul>
 			</li>
 		</ul>

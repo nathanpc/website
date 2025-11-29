@@ -90,3 +90,15 @@
 	'http://osr600doc.xinuos.com/en/SDK_netapi/CONTENTS.html#:~:text=Programming%20with%20sockets',
 	'An amazing tutorial on how to do proper sockets programming.'
 ); ?>
+
+<!-- ----------------------------------------------------------------------- -->
+
+<h3 id="prog-java">Java</h3>
+<p>The language of enterprise programming. The amazing, resource-hungry VM, that
+	brought us the Enterprise JavaBean Factory.</p>
+
+<?php link_component(
+	'J2ME development in 2023',
+	'https://microgram.app/blog/001-J2ME-development-in-2023.html',
+	'Describes how to setup a J2ME development environment in modern times.'
+); ?>
