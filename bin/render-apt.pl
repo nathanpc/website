@@ -49,8 +49,12 @@ sub read_file {
 	# Slurp the file into the contents array.
 	open(my $fh, '<:encoding(UTF-8)', $fname);
 	@html = <$fh>;
-	chomp @html;
 	close($fh);
+
+	# Clean up line endings.
+	for (my $i = 0; $i <= $#html; $i++) {
+		$html[$i] =~ s/[\r\n]//g;
+	}
 }
 
 # Parse all reference link definitions.
@@ -171,7 +175,7 @@ sub autolink {
 		# Embed images when possible.
 		if (!is_refdef($html[$i])) {
 			foreach my $ext (@img_exts) {
-				if ($html[$i] =~ m/\.\Q$ext\E$/) {
+				if ($html[$i] =~ m/\.\Q$ext\E$/i) {
 					$html[$i] =~ s/$url_regex/$img_replace->($1)/ge;
 					goto next_iter;
 				}
