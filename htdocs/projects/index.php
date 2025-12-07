@@ -85,8 +85,8 @@
 	<div class="section">
 		<h2>under construction</h2>
 
-		<p><?= compat_image('/assets/images/misc/under-construction.gif',
-				'Under construction GIF') ?></p>
+		<p><img src="/assets/images/misc/under-construction.gif",
+			alt="Under construction GIF"></p>
 
 		<p>More content, and more up-to-date content, is currently being written
 			to go on this page. Consider everything that you see here as
