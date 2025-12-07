@@ -11,14 +11,14 @@
 
 	<div id="blog-post" class="section">
 		<h2>Modding a Wyse/Dell D10D (5010) Thin Client to Expand its Storage</h2>
-		<div id="published-date">2025-11-29 - <a href="gopher://nathancampos.me/0/phlog/2025-11-29_wyse_d10d_mods/post.txt">Also available on Gopher</a></div>
+		<div id="published-date">2025-11-29 - <a href="gopher://nathancampos.me/0/phlog/2025-11-29_wyse-d10d-mods/post.txt">Also available on Gopher</a></div>
 	</div>
 
 <pre id="plain-text">Recently, I bought a machine that clearly has an identity crisis. It's a thin
 client from Dell/Wyse (aren't corporate acquisitions lovely?) that can either
 be called a D10D, a 5010, or even a Dx0D depending on which label or website you
-read. Mine came with a Wyse front badge [<a href="http://nathancampos.me/log/2025-11-29_wyse_d10d_mods/wyse-d10d-front.JPG">1</a>] and Dell embossings on the sides of
-the case [<a href="http://nathancampos.me/log/2025-11-29_wyse_d10d_mods/wyse-d10d-side.JPG">2</a>], and the Dell-branded service tag marks it as a model Dx0D, but
+read. Mine came with a Wyse front badge [<a href="http://nathancampos.me/log/2025-11-29_wyse-d10d-mods/wyse-d10d-front.JPG">1</a>] and Dell embossings on the sides of
+the case [<a href="http://nathancampos.me/log/2025-11-29_wyse-d10d-mods/wyse-d10d-side.JPG">2</a>], and the Dell-branded service tag marks it as a model Dx0D, but
 with a product ID of "D10D 1GF/2GR" an was manufactured in April 2015. As usual
 Parky Towers has in-depth details on it [<a href="https://www.parkytowers.me.uk/thin/wyse/d/d10d/">3</a>].
 
@@ -46,7 +46,7 @@ mSATA to SATA adapter from Amazon that looked like it might fit [<a href="https:
 start hacking on the machine, I opened it up and installed the mSATA adapter,
 only to discover that it didn't fit:
 
-<a href="http://nathancampos.me/log/2025-11-29_wyse_d10d_mods/msata-orig-nofit.JPG"><img src="http://nathancampos.me/log/2025-11-29_wyse_d10d_mods/msata-orig-nofit.JPG_compat.gif"></a>
+<a href="http://nathancampos.me/log/2025-11-29_wyse-d10d-mods/msata-orig-nofit.JPG"><img src="http://nathancampos.me/log/2025-11-29_wyse-d10d-mods/msata-orig-nofit.JPG_compat.gif"></a>
 
 Although, as can be seen in the pictures, it's hitting the RAM socket.
 Thankfully the area of the adapter's board that's interferring with the RAM
@@ -56,24 +56,24 @@ looks like a fiducial mark [<a href="https://www.pcbway.com/blog/PCB_Manufacturi
 So I quickly made some marks with a sharpie, got the adapter in a vise, and
 started filling the corner off until it would fit in the motherboard:
 
-<a href="http://nathancampos.me/log/2025-11-29_wyse_d10d_mods/msata-filled-fit.JPG"><img src="http://nathancampos.me/log/2025-11-29_wyse_d10d_mods/msata-filled-fit.JPG_compat.gif"></a>
+<a href="http://nathancampos.me/log/2025-11-29_wyse-d10d-mods/msata-filled-fit.JPG"><img src="http://nathancampos.me/log/2025-11-29_wyse-d10d-mods/msata-filled-fit.JPG_compat.gif"></a>
 
-<a href="http://nathancampos.me/log/2025-11-29_wyse_d10d_mods/msata-filled-closeup.JPG"><img src="http://nathancampos.me/log/2025-11-29_wyse_d10d_mods/msata-filled-closeup.JPG_compat.gif"></a>
+<a href="http://nathancampos.me/log/2025-11-29_wyse-d10d-mods/msata-filled-closeup.JPG"><img src="http://nathancampos.me/log/2025-11-29_wyse-d10d-mods/msata-filled-closeup.JPG_compat.gif"></a>
 
 The problem now was that, differently from Parky Tower's motherboard photos [<a href="https://www.parkytowers.me.uk/thin/wyse/d/d10d/">3</a>],
 which showed the ST0 standoff not populated [<a href="https://www.parkytowers.me.uk/thin/wyse/d/d10d/imgs/flash_pcie.jpg">10</a>], mine had that inconvenient
 standoff nicely soldered to the board, meaning it interfered once again with my
 adapter:
 
-<a href="http://nathancampos.me/log/2025-11-29_wyse_d10d_mods/msata-st0-standoff-issue.JPG"><img src="http://nathancampos.me/log/2025-11-29_wyse_d10d_mods/msata-st0-standoff-issue.JPG_compat.gif"></a>
+<a href="http://nathancampos.me/log/2025-11-29_wyse-d10d-mods/msata-st0-standoff-issue.JPG"><img src="http://nathancampos.me/log/2025-11-29_wyse-d10d-mods/msata-st0-standoff-issue.JPG_compat.gif"></a>
 
 After a lot of flux, leaded solder, desoldering braid, and the help of my trusty
 PortaStation [<a href="http://innoveworkshop.com/product/portastation">11</a>], I was finally able to liberate the ST0 standoff from its pad,
 and was finally able get my mSATA adapter properly seated on the motherboard:
 
-<a href="http://nathancampos.me/log/2025-11-29_wyse_d10d_mods/st0-desoldered.JPG"><img src="http://nathancampos.me/log/2025-11-29_wyse_d10d_mods/st0-desoldered.JPG_compat.gif"></a>
+<a href="http://nathancampos.me/log/2025-11-29_wyse-d10d-mods/st0-desoldered.JPG"><img src="http://nathancampos.me/log/2025-11-29_wyse-d10d-mods/st0-desoldered.JPG_compat.gif"></a>
 
-<a href="http://nathancampos.me/log/2025-11-29_wyse_d10d_mods/msata-inplace.JPG"><img src="http://nathancampos.me/log/2025-11-29_wyse_d10d_mods/msata-inplace.JPG_compat.gif"></a>
+<a href="http://nathancampos.me/log/2025-11-29_wyse-d10d-mods/msata-inplace.JPG"><img src="http://nathancampos.me/log/2025-11-29_wyse-d10d-mods/msata-inplace.JPG_compat.gif"></a>
 
 After all this trouble I was finally able to get to a point where I could
 install an operating system to this machine, although looking at it now, maybe I
@@ -93,8 +93,8 @@ was greeted to a BIOS password screen. I tried the classic "Fireport" (with a
 capital F) [<a href="https://www.dell.com/support/kbdoc/en-us/000128600/dell-wyse-hardware-what-are-the-bios-passwords">14</a>] and it promptly got me into the BIOS setup screen.
 
 
-[1]: <a href="http://nathancampos.me/log/2025-11-29_wyse_d10d_mods/wyse-d10d-front.JPG">http://nathancampos.me/log/2025-11-29_wyse_d10d_mods/wyse-d10d-front.JPG</a>
-[2]: <a href="http://nathancampos.me/log/2025-11-29_wyse_d10d_mods/wyse-d10d-side.JPG">http://nathancampos.me/log/2025-11-29_wyse_d10d_mods/wyse-d10d-side.JPG</a>
+[1]: <a href="http://nathancampos.me/log/2025-11-29_wyse-d10d-mods/wyse-d10d-front.JPG">http://nathancampos.me/log/2025-11-29_wyse-d10d-mods/wyse-d10d-front.JPG</a>
+[2]: <a href="http://nathancampos.me/log/2025-11-29_wyse-d10d-mods/wyse-d10d-side.JPG">http://nathancampos.me/log/2025-11-29_wyse-d10d-mods/wyse-d10d-side.JPG</a>
 [3]: <a href="https://www.parkytowers.me.uk/thin/wyse/d/d10d/">https://www.parkytowers.me.uk/thin/wyse/d/d10d/</a>
 [4]: <a href="https://support.microsoft.com/en-us/office/import-or-link-to-data-in-another-access-database-095ab408-89c7-45b3-aac2-58036e45fcf6">https://support.microsoft.com/en-us/office/import-or-link-to-data-in-another-access-database-095ab408-89c7-45b3-aac2-58036e45fcf6</a>
 [5]: <a href="gopher://nathancampos.me:70/0/occ/2025/day4.txt">gopher://nathancampos.me:70/0/occ/2025/day4.txt</a>

@@ -33,7 +33,7 @@ mSATA to SATA adapter from Amazon that looked like it might fit [7]. Eager to
 start hacking on the machine, I opened it up and installed the mSATA adapter,
 only to discover that it didn't fit:
 
-gopher://nathancampos.me/I/phlog/2025-11-29_wyse_d10d_mods/msata-orig-nofit.JPG
+gopher://nathancampos.me/I/phlog/2025-11-29_wyse-d10d-mods/msata-orig-nofit.JPG
 
 Although, as can be seen in the pictures, it's hitting the RAM socket.
 Thankfully the area of the adapter's board that's interferring with the RAM
@@ -43,24 +43,24 @@ looks like a fiducial mark [9] on both sides, all things we can safely cut out.
 So I quickly made some marks with a sharpie, got the adapter in a vise, and
 started filling the corner off until it would fit in the motherboard:
 
-gopher://nathancampos.me/I/phlog/2025-11-29_wyse_d10d_mods/msata-filled-fit.JPG
+gopher://nathancampos.me/I/phlog/2025-11-29_wyse-d10d-mods/msata-filled-fit.JPG
 
-gopher://nathancampos.me/I/phlog/2025-11-29_wyse_d10d_mods/msata-filled-closeup.JPG
+gopher://nathancampos.me/I/phlog/2025-11-29_wyse-d10d-mods/msata-filled-closeup.JPG
 
 The problem now was that, differently from Parky Tower's motherboard photos [3],
 which showed the ST0 standoff not populated [10], mine had that inconvenient
 standoff nicely soldered to the board, meaning it interfered once again with my
 adapter:
 
-gopher://nathancampos.me/I/phlog/2025-11-29_wyse_d10d_mods/msata-st0-standoff-issue.JPG
+gopher://nathancampos.me/I/phlog/2025-11-29_wyse-d10d-mods/msata-st0-standoff-issue.JPG
 
 After a lot of flux, leaded solder, desoldering braid, and the help of my trusty
 PortaStation [11], I was finally able to liberate the ST0 standoff from its pad,
 and was finally able get my mSATA adapter properly seated on the motherboard:
 
-gopher://nathancampos.me/I/phlog/2025-11-29_wyse_d10d_mods/st0-desoldered.JPG
+gopher://nathancampos.me/I/phlog/2025-11-29_wyse-d10d-mods/st0-desoldered.JPG
 
-gopher://nathancampos.me/I/phlog/2025-11-29_wyse_d10d_mods/msata-inplace.JPG
+gopher://nathancampos.me/I/phlog/2025-11-29_wyse-d10d-mods/msata-inplace.JPG
 
 After all this trouble I was finally able to get to a point where I could
 install an operating system to this machine, although looking at it now, maybe I
@@ -80,8 +80,8 @@ was greeted to a BIOS password screen. I tried the classic "Fireport" (with a
 capital F) [14] and it promptly got me into the BIOS setup screen.
 
 
-[1]: gopher://nathancampos.me/I/phlog/2025-11-29_wyse_d10d_mods/wyse-d10d-front.JPG
-[2]: gopher://nathancampos.me/I/phlog/2025-11-29_wyse_d10d_mods/wyse-d10d-side.JPG
+[1]: gopher://nathancampos.me/I/phlog/2025-11-29_wyse-d10d-mods/wyse-d10d-front.JPG
+[2]: gopher://nathancampos.me/I/phlog/2025-11-29_wyse-d10d-mods/wyse-d10d-side.JPG
 [3]: https://www.parkytowers.me.uk/thin/wyse/d/d10d/
 [4]: https://support.microsoft.com/en-us/office/import-or-link-to-data-in-another-access-database-095ab408-89c7-45b3-aac2-58036e45fcf6
 [5]: gopher://nathancampos.me:70/0/occ/2025/day4.txt
