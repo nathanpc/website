@@ -93,6 +93,20 @@
 
 <!-- ----------------------------------------------------------------------- -->
 
+<h3 id="prog-c">C and C++</h3>
+<p>If I had to choose one language to use for the rest of my life, it would be
+	C. It's the language I use most of the time and love it. C++ is here just
+	for completeness, since it becomes a different language every 3 years.</p>
+
+<?php link_component(
+	'Mead\'s Guide to getopt',
+	'https://azrael.digipen.edu/~mmead/www/mg/getopt/index.html',
+	'The best tutorial on how to use getopt. Includes a step-by-step ' .
+	'approach and plenty of examples with output.'
+); ?>
+
+<!-- ----------------------------------------------------------------------- -->
+
 <h3 id="prog-java">Java</h3>
 <p>The language of enterprise programming. The amazing, resource-hungry VM, that
 	brought us the Enterprise JavaBean Factory.</p>

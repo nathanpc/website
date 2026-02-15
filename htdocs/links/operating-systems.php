@@ -106,6 +106,18 @@
 	'https://developer.apple.com/library/archive/technotes/tn2002/tn2110.html',
 	'Lists all the official Java versions available for each Mac OS X release.'
 ); ?>
+<?php link_component(
+	'Last versions of applications for Mac OS X on PowerPC',
+	'https://matejhorvat.si/en/mac/osxppcsw/index.htm',
+	'Massive list filled with links to the last versions of applications ' .
+		'that support PowerPC on Tiger and Leopard.'
+); ?>
+<?php link_component(
+	'macOS PowerPC Ports',
+	'https://macos-powerpc.org/',
+	'A project aimed at supporting modern open-source software for macOS on ' .
+	'PowerPC. Includes a fork of MacPorts specifically for PowerPC.'
+); ?>
 
 <!-- ----------------------------------------------------------------------- -->
 

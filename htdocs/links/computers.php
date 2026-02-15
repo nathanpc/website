@@ -63,3 +63,8 @@
 	'https://diskprices.com/',
 	'An amazing resource to find the best Amazon deals on storage media.'
 ); ?>
+<?php link_component(
+	'Open Directory Search',
+	'http://palined.com/search/',
+	'Uses Google Search filters to find hidden gems in open directories.'
+); ?>
