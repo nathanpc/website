@@ -1,6 +1,10 @@
 # Compatible images.
 *_compat.gif
 
+# Rendered HTML pages.
+index.html
+!*.cnt.html
+
 # Misc.
 .DS_Store
 Thumbs.db
