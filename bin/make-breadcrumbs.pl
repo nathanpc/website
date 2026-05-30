@@ -22,6 +22,13 @@ sub make_crumbs {
 	my @crumbs = split /\//, $relpath;
 	my $sep = '<span class="sep">/</span>';
 
+	# Are we dealing with the website's homepage?
+	if ($relpath =~ /^\/index\.(php|html?)/) {
+		print "<div id=\"breadcrumbs\">\n\t$sep\n\t<span class=\"label\">" .
+			"index</span>\n</div>\n";
+		return;
+	}
+
 	# Go through the path splits and build the crumbs.
 	my $html = '';
 	while (scalar(@crumbs) > 0) {
