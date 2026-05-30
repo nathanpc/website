@@ -10,20 +10,23 @@
 
 	<!-- Navigation bar. -->
 	<div id="navbar">
-		<?php
-			require_once __DIR__ . '/../src/navbar.php';
-			echo navbar(array(
-				'index' => '/',
-				'gopher' => 'gopher://nathancampos.me:70/1/',
-				'projects' => '/projects',
-				'log' => '/log',
-				'links' => '/links',
-				'wiki' => '//wiki.nathancampos.me/',
-				'work' => '//innoveworkshop.com/',
-				'meta' => '/meta',
-				'contact' => '/contact'
-			));
-		?>
+		<span class="item"><a href="/">index</a></span>
+		<span class="spacer">|</span>
+		<span class="item"><a href="gopher://nathancampos.me:70/1/">gopher</a></span>
+		<span class="spacer">|</span>
+		<span class="item"><a href="/projects">projects</a></span>
+		<span class="spacer">|</span>
+		<span class="item"><a href="/log">log</a></span>
+		<span class="spacer">|</span>
+		<span class="item"><a href="/links">links</a></span>
+		<span class="spacer">|</span>
+		<span class="item"><a href="//wiki.nathancampos.me/">wiki</a></span>
+		<span class="spacer">|</span>
+		<span class="item"><a href="//innoveworkshop.com/">work</a></span>
+		<span class="spacer">|</span>
+		<span class="item"><a href="/meta">meta</a></span>
+		<span class="spacer">|</span>
+		<span class="item"><a href="/contact">contact</a></span>
 	</div>
 
 	<hr>
