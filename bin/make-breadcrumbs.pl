@@ -61,5 +61,8 @@ if (rindex($fname, $htdocs, 0) < 0) {
 	exit 1;
 }
 
+# Remove the template suffix.
+$fname =~ s/\.cnt\././;
+
 # Build up the breadcrumbs HTML.
 make_crumbs(substr $fname, length($htdocs));
