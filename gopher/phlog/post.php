@@ -25,6 +25,7 @@
 <html>
 <head>
 	<?php include __DIR__ . '/../../templates/head.php'; ?>
+	<?php if ($exists) set_base_url("/log/${date}_${slug}/"); ?>
 
 	<!-- Page information. -->
 	<title><?= $title ?></title>

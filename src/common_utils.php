@@ -11,6 +11,17 @@
 date_default_timezone_set('UTC');
 
 /**
+ * Sets the base URL to be used when calling href().
+ *
+ * @param string $base_url Base of all URLs returned by href().
+ */
+function set_base_url($base_url) {
+	if (substr($base_url, -1) != '/')
+		$base_url .= '/';
+	define('BASE_URL', $base_url);
+}
+
+/**
  * Creates a proper href location based on our project's root path.
  *
  * @param string $loc Location as if the resource was in the root of the server.
@@ -18,6 +29,14 @@ date_default_timezone_set('UTC');
  * @return string Transposed location of the resource.
  */
 function href($loc) {
+	// Prepend the base URL if we have one.
+	if (defined('BASE_URL') && (substr($loc, 0, 1) != '/')) {
+		// Normalize the location.
+		if (substr($loc, 0, 2) == './')
+			$loc = substr($loc, 2);
+		return BASE_URL . $loc;
+	}
+
 	return $loc;
 }
 
