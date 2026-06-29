@@ -9,9 +9,6 @@
 
 require_once __DIR__ . '/common_utils.php';
 
-// Get the browser information once in order to infer it's oldness.
-$browser_info = @get_browser(null, true);
-
 /**
  * Checks if the browser that is requesting us is console-based and won't be
  * capable of interpreting CSS or displaying images.
@@ -19,9 +16,9 @@ $browser_info = @get_browser(null, true);
  * @return bool TRUE if the browser visiting us is console-based.
  */
 function compat_isconsole() {
-	global $browser_info;
-	return ($browser_info['browser'] == 'Lynx') ||
-		($browser_info['browser'] == 'w3m');
+	/*return ($browser_info['browser'] == 'Lynx') ||
+		($browser_info['browser'] == 'w3m');*/
+	return false;
 }
 
 /**
@@ -31,9 +28,9 @@ function compat_isconsole() {
  * @return bool TRUE if the browser visiting us is WebKit-based.
  */
 function compat_iswebkit() {
-	global $browser_info;
-	return ($browser_info['renderingengine_name'] == 'WebKit') ||
-		($browser_info['renderingengine_name'] == 'Blink');
+	/*return ($browser_info['renderingengine_name'] == 'WebKit') ||
+		($browser_info['renderingengine_name'] == 'Blink');*/
+	return true;
 }
 
 /**
@@ -43,8 +40,8 @@ function compat_iswebkit() {
  * @return bool TRUE if the browser visiting us is WebKit-based.
  */
 function compat_ismobile() {
-	global $browser_info;
-	return (bool)$browser_info['ismobiledevice'];
+	//return (bool)$browser_info['ismobiledevice'];
+	return false;
 }
 
 /**
