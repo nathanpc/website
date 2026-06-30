@@ -11,9 +11,10 @@ use warnings;
 
 use File::Basename;
 use File::Find;
+use Cwd 'abs_path';
 
 # Go through the website folder looking for images.
-my $proj_folder = dirname(dirname(__FILE__));
+my $proj_folder = dirname(dirname(abs_path($0)));
 find({ wanted => \&process_file, follow => 0, no_chdir => 1 }, $proj_folder);
 
 # Processes all files found in the website folder.
