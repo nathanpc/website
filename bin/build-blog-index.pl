@@ -10,9 +10,10 @@ use warnings;
 use autodie;
 
 use File::Basename;
+use Cwd 'abs_path';
 
 # Open file for writing.
-my $blog_folder = dirname(dirname(__FILE__)) . '/gopher/phlog/';
+my $blog_folder = dirname(dirname(abs_path($0))) . '/gopher/phlog/';
 my $index_fn = $blog_folder . '/index.php';
 open(my $index_fh, '>', $index_fn);
 print "Writing blog index to $index_fn\n";
@@ -51,7 +52,7 @@ closedir($blog_dir);
 my $last_year = '';
 foreach (@entries) {
 	# Filter only directories.
-	my $dir = $blog_folder . '/' . $_;
+	my $dir = "$blog_folder/$_";
 	if (-d $dir) {
 		# Ignore dot folders.
 		if (m/^\./) {
@@ -71,15 +72,11 @@ foreach (@entries) {
 			}
 
 			# Get post title.
-			my $title = $slug;
-			open(my $fh, '<', $dir . '/index.php');
-			while (my $line = <$fh>) {
-				chomp $line;
-				if ($line =~ m/^\s*<title>(?<title>.+)<\/title>/i) {
-					$title = $+{title};
-					last;
-				}
-			}
+			open(my $fh, '<', $dir . '/content.php');
+			my $title = <$fh>;
+			chomp $title;
+			$title =~ s/\s*\<\!--\s+//;
+			$title =~ s/\s+--\>\s*//;
 			close($fh);
 
 			# Print post entry.
