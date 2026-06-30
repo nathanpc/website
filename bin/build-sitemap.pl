@@ -12,6 +12,16 @@ use autodie;
 use POSIX;
 use File::stat;
 
+# Possible extensions for visible pages.
+my $page_ext = qr/php|html?|asp/;
+
+# Get the path prefix to be removed from the paths passed to us.
+my $path_prefix = './';
+if (scalar(@ARGV) > 0) {
+	$path_prefix = $ARGV[0];
+	chomp $path_prefix;
+}
+
 # Define the URL prefix for the sitemap.
 my $url_prefix = 'https://nathancampos.me';
 
@@ -26,14 +36,18 @@ while (my $path = <STDIN>) {
 
 	# Clean up the path for a URL.
 	my $url = $path;
+	$url =~ s/^\Q$path_prefix\E//;
 	$url =~ s/^.*htdocs\///;
-	$url =~ s/index\.php//;
-	
-	# Clean up the path for the blog.
-	$url =~ s|\./gopher/phlog|log|;
+	$url =~ s/index\.($page_ext)$//;
 
-	# Ignore sensitive files.
-	next if ($url =~ m/servinfo\.php/);
+	# Clean up the path for the blog.
+	$url =~ s|/gopher/phlog|log|;
+	
+	# Handle the special case of blog entries.
+	if ($url =~ m|log/[^/]+/content\.($page_ext)$|) {
+		$url =~ s/content.($page_ext)$//;
+		$url = join('/', split(/_/, $url, 2));
+	}
 
 	# Get the file's last modified date.
 	my $tm = stat($path)->mtime;
