@@ -14,22 +14,24 @@ BINDIR = ./bin
 HTDOCS = ./htdocs
 PHLOG  = ./gopher/phlog
 
-# Files
-SOURCES = $(find $(HTDOCS) -type f -name '*.html')
+.PHONY: all update build images blog sitemap
 
-.PHONY: all build blog sitemap
+all: update
 
-all: build
+update: $(HTDOCS)/robots.txt images
+	$(BINDIR)/update-logs-indexes.pl
 
-build: $(HTDOCS)/robots.txt blog sitemap
+build: $(HTDOCS)/robots.txt images blog sitemap
 
-blog: $(find $(HTDOCS)/blog/*/ -type f -name '*.php')
+images:
+	$(BINDIR)/update-compat-images.pl
+
+blog:
 	$(BINDIR)/build-blog-index.pl
 	$(BINDIR)/build-phlog-index.pl
 
 sitemap: blog
-	find $(HTDOCS) $(PHLOG) -type f -name '*.php' -not -path \
-		'./htdocs/errors/*' | $(BINDIR)/build-sitemap.pl > $(HTDOCS)/sitemap.xml
+	$(BINDIR)/update-sitemap.sh
 
 $(HTDOCS)/robots.txt:
 	$(CURL) -o "$(HTDOCS)/robots.txt" 'https://raw.githubusercontent.com/ai-robots-txt/ai.robots.txt/refs/heads/main/robots.txt'
