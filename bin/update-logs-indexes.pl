@@ -36,7 +36,11 @@ if (!$outdated) {
 	exit 0;
 }
 
-# Build indexes.
+# Build indexes and update the sitemap.
+print "Rebuilding blog index...\n";
 { require "$proj_root/bin/build-blog-index.pl"; }
+print "Rebuilding phlog index...\n";
 { require "$proj_root/bin/build-phlog-index.pl"; }
-print "Done.\n";
+print "Rebuilding sitemap...\n";
+print readpipe("$proj_root/bin/update-sitemap.sh");
+print "Updated all indexes.\n";
