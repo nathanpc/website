@@ -10,7 +10,7 @@
 	if ($exists) {
 		$title = fgets(fopen("$folder/content.php", 'r'));
 		$title = preg_replace('/^\s*\<\!--\s+/', '', $title);
-		$title = preg_replace('/\s+--\>$/', '', $title);
+		$title = preg_replace('/\s+--\>\s*$/', '', $title);
 	} else {
 		http_response_code(404);
 	}
