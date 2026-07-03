@@ -59,6 +59,10 @@ foreach (@entries) {
 			next;
 		}
 
+		# Ignore folders without a blog post.
+		my $post_file = "$dir/content.php";
+		next if (!-e $post_file);
+
 		# Get parts.
 		if (m/^(?<year>[0-9]{4})-(?<month>[0-9]{2})-(?<day>[0-9]{2})_(?<slug>.+)/i) {
 			my $date = $+{year} . '-' . $+{month} . '-' . $+{day};
@@ -72,7 +76,7 @@ foreach (@entries) {
 			}
 
 			# Get post title.
-			open(my $fh, '<', $dir . '/content.php');
+			open(my $fh, '<', $post_file);
 			my $title = <$fh>;
 			chomp $title;
 			$title =~ s/\s*\<\!--\s+//;
