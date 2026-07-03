@@ -6,7 +6,7 @@
  */
 
 html, body {
-	font-family: Arial, Verdana, sans-serif;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeSpeed;
 
@@ -30,7 +30,7 @@ hr {
 
 a {
 	color: #138700;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 a:hover, a:active {
@@ -43,7 +43,7 @@ a.email {
 	letter-spacing: 1px;
 }
 
-pre {
+code, pre {
 	font-family: Courier New, monospace;
 }
 
@@ -52,12 +52,17 @@ pre.code-block {
 	padding: 5px;
 	overflow-x: scroll;
 
-	background-color: #ffefd5;
+	background-color: #f6f6f6;
 }
 
 /**
  * Website title area.
  */
+
+#header a {
+	text-decoration: none;
+}
+
 #title-head {
 	margin-bottom: 10px;
 }
@@ -88,6 +93,10 @@ pre.code-block {
 /**
  * Content area.
  */
+#content {
+	font-family: Helvetica, Verdana, sans-serif;
+}
+
 #content .section h2 {
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -188,4 +197,8 @@ pre.code-block {
  */
 #footer .last-modified {
 	font-size: 9pt;
+}
+
+#footer a {
+	text-decoration: none;
 }
