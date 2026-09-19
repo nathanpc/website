@@ -103,6 +103,7 @@ class SourceDirectory extends SourceTreeNode {
 	public function __construct($root, $loc, $items = []) {
 		parent::__construct($root, $loc);
 		$this->items = $items;
+		$this->sortItems();
 	}
 
 	public function asTreeNode($onclick = '', $depth = 0) {
@@ -123,6 +124,15 @@ class SourceDirectory extends SourceTreeNode {
 		$html .= "</ul>\n</li>\n";
 
 		return $html;
+	}
+
+	/**
+	 * Sorts the items in this directory.
+	 */
+	public function sortItems() {
+		usort($this->items, function ($a, $b) {
+			return strcmp($a->getBasename(), $b->getBasename());
+		});
 	}
 
 	/**
