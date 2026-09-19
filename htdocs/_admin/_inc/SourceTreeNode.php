@@ -31,9 +31,10 @@ abstract class SourceTreeNode {
 		if (!empty($onclick))
 			$onclick = "onclick='$onclick'";
 
-		return "<li class='$type'><span $onclick><img src='$icon' alt='" .
-			$this->getBasename() . "' /> " . $this->getBasename() .
-			"</span></li>";
+		return "<li class='$type'><span class='node' $onclick>" .
+			"<img src='$icon' alt='" . $this->getBasename() . "' /> " .
+			"<span class='label'>" . $this->getBasename() . "</span></span>" .
+			"</li>";
 	}
 
 	/**
