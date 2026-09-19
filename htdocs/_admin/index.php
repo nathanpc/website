@@ -12,6 +12,9 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="<?= href('./admin.css') ?>">
+
+    <!-- Scripts -->
+    <script type="application/javascript" src="<?= href('./treeview.js') ?>"></script>
 </head>
 <body>
 	<?php
@@ -20,6 +23,7 @@
 		$tree = new DirectoryTree(__DIR__ . '/../../', ['gopher', 'htdocs']);
         $listing = $tree->traverse();
 	?>
+
     <ul id="treeview">
         <?= $listing->asTreeNode() ?>
     </ul>

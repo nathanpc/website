@@ -31,18 +31,20 @@ abstract class SourceTreeNode {
 		if (!empty($onclick))
 			$onclick = "onclick='$onclick'";
 
-		return "<li class='$type' $onclick><img src='$icon' /> " .
-			$this->getBasename() . "</li>";
+		return "<li class='$type'><span $onclick><img src='$icon' alt='" .
+			$this->getBasename() . "' /> " . $this->getBasename() .
+			"</span></li>";
 	}
 
 	/**
 	 * Gets the HTML tree node representation of this object.
 	 *
 	 * @param string $onclick Javascript onclick event handler.
+	 * @param int    $depth   Depth of the node in the tree.
 	 *
 	 * @return string HTML tree node.
 	 */
-	public abstract function asTreeNode($onclick = '');
+	public abstract function asTreeNode($onclick = '', $depth = 0);
 
 	/**
 	 * Gets the basename from the location.
@@ -76,7 +78,7 @@ abstract class SourceTreeNode {
  * Representation of a file in the website.
  */
 class SourceFile extends SourceTreeNode {
-	public function asTreeNode($onclick = '') {
+	public function asTreeNode($onclick = '', $depth = 0) {
 		if (empty($onclick))
 			$onclick = "openFile(this, '" . $this->getRelativeLocation() . "')";
 
@@ -103,16 +105,21 @@ class SourceDirectory extends SourceTreeNode {
 		$this->items = $items;
 	}
 
-	public function asTreeNode($onclick = '') {
+	public function asTreeNode($onclick = '', $depth = 0) {
 		if (empty($onclick))
 			$onclick = 'toggleExpandDirectory(this)';
+
+		// Determine if the node should be collapsed due to its depth.
+		$classes = '';
+		if ($depth > 1)
+			$classes = 'class="collapsed"';
 
 		// Build up the HTML tree.
 		$html = $this->baseTreeNode('dir',
 			href('/assets/icons/folder_closed.png'), $onclick);
-		$html = substr($html, 0, -5) . "\n<ul>\n";
+		$html = substr($html, 0, -5) . "\n<ul $classes>\n";
 		foreach ($this->items as $item)
-			$html .= $item->asTreeNode() . "\n";
+			$html .= $item->asTreeNode('', $depth + 1) . "\n";
 		$html .= "</ul>\n</li>\n";
 
 		return $html;

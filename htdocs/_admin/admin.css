@@ -4,3 +4,7 @@
  *
  * @author Nathan Campos <hi@nathancampos.me>
  */
+
+.dir .collapsed {
+    display: none;
+}

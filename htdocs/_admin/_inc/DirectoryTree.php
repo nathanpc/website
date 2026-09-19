@@ -66,7 +66,8 @@ class DirectoryTree {
 			// Build up the full path and determine if it's a directory or file.
 			$fname = realpath($loc . DIRECTORY_SEPARATOR . $fname);
 			$items[] = is_dir($fname) ?
-				new SourceDirectory($this->root, $fname) : //, $this->getListing($fname)););
+				new SourceDirectory($this->root, $fname,
+					$this->getListing($fname)) :
 				new SourceFile($this->root, $fname);
 		}
 
