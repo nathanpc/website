@@ -29,10 +29,10 @@
 			<tr>
 				<td id="treeview-cell">
 					<?php
-					// Setup directory traversal for listing.
-					require_once __DIR__ . '/_inc/DirectoryTree.php';
-					$tree = new DirectoryTree(__DIR__ . '/../../', ['gopher', 'htdocs']);
-					$listing = $tree->traverse();
+						// Setup directory traversal for listing.
+						require_once __DIR__ . '/_inc/DirectoryTree.php';
+						$tree = new DirectoryTree(__DIR__ . '/../../', ['gopher', 'htdocs']);
+						$listing = $tree->traverse();
 					?>
 
 					<ul id="treeview">
@@ -40,7 +40,8 @@
 					</ul>
 				</td>
 				<td id="content-cell" colspan="3">
-					<h2>content</h2>
+					<iframe width="100%" height="100%" scrolling="auto"
+                        src="editor.php"></iframe>
 				</td>
 			</tr>
 		</tbody>

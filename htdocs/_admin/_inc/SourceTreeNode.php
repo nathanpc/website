@@ -29,7 +29,7 @@ abstract class SourceTreeNode {
 	 */
 	protected function baseTreeNode($type, $icon, $onclick) {
 		if (!empty($onclick))
-			$onclick = "onclick='$onclick'";
+			$onclick = "onclick=\"$onclick\"";
 
 		return "<li class='$type'><span class='node' $onclick>" .
 			"<img src='$icon' alt='" . $this->getBasename() . "' /> " .
@@ -62,7 +62,12 @@ abstract class SourceTreeNode {
 	 * @return string Path of the object relative to the website's root.
 	 */
 	public function getRelativeLocation() {
-		return substr($this->loc, strlen($this->root));
+		// Normalize path.
+		$path = substr($this->loc, strlen($this->root));
+		if (DIRECTORY_SEPARATOR == "\\")
+			$path = str_replace("\\", '/', $path);
+
+		return $path;
 	}
 
 	/**

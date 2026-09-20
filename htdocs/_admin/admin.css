@@ -51,3 +51,23 @@ html, body {
 #treeview .dir .collapsed {
 	display: none;
 }
+
+/* Web Editor */
+
+#content-cell iframe {
+	border: none;
+}
+
+#editor-controls {
+	margin-top: 10px;
+	margin-left: 2%;
+}
+
+#editor {
+	width: 96%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 2%;
+
+	font-family: Monaco, Lucida Console, Courier New, monospace;
+}

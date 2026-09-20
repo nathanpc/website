@@ -18,6 +18,18 @@ function toggleExpandDirectory(elem) {
 }
 
 /**
+ * Opens a file for editing using the web editor.
+ *
+ * @param {HTMLElement} elem Element that fired this event.
+ * @param {string}      file File path, relative to the website's root, to be
+ *                           opened.
+ */
+function openFile(elem, file) {
+	$('#content-cell iframe').attr('src', 'editor.php?file=' +
+		encodeURIComponent(file));
+}
+
+/**
  * Resizes the layout of the entire view depending on the size of the window.
  */
 function resizeLayout() {
@@ -40,5 +52,10 @@ function resizeLayout() {
 		$('#header-row > td').attr('colspan', 3);
 		contentCell.attr('colspan', 2);
 	}
+
+	// Resize the content area iframe.
+	var iframe = $('#content-cell iframe');
+	iframe.outerHeight(contentCell.height() - 5, true);
+	iframe.outerWidth(contentCell.width(), true);
 }
 window.addEventListener("resize", resizeLayout);
