@@ -16,6 +16,9 @@ use Cwd qw(abs_path);
 # Get the base htdocs folder path
 our $htdocs = abs_path(dirname(__FILE__) . '/../htdocs/');
 
+# Get the base phlog folder path
+our $phlog = abs_path(dirname(__FILE__) . '/../gopher/phlog/');
+
 # Makes the breadcrumbs HTML from a normalized string (relative to htdocs).
 sub make_crumbs {
 	my ($relpath) = @_;
@@ -53,6 +56,14 @@ if (scalar(@ARGV) < 1) {
 	exit 1;
 }
 my $fname = abs_path($ARGV[0]);
+
+# Convert paths for blog entries.
+if (rindex($fname, $phlog, 0) == 0) {
+	$fname =~ s/\Q$phlog//;
+	$fname =~ s|_|/|;
+	$fname = $htdocs . '/log/' . $fname;
+	$fname =~ s|//|/|;
+}
 
 # Check if the path is not a subfolder of htdocs.
 if (rindex($fname, $htdocs, 0) < 0) {
