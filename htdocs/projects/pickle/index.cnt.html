@@ -1,108 +1,162 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-	<?php include __DIR__ . '/../../../templates/head.php'; ?>
+<!--
+PickLE
+An electronic component pick list application and file parser library.
+-->
 
-	<!-- Page information. -->
-	<title>PickLE</title>
-	<meta name="description" content="An electronic component pick list application and file parser library.">
-</head>
-<body>
-	<?php include_template('header'); ?>
+<div class="section">
+	<h2>PickLE</h2>
 
-	<div class="section">
-		<h2>PickLE</h2>
+	<p>
+		An application and a parsing library to create an electronic
+		component pick list file format designed to be human-readable and
+		completely usable in its own plain-text form. You can think of it as
+		<a href="https://daringfireball.net/projects/markdown/syntax">Markdown</a>
+		for your project's pick lists.
+	</p>
 
-		<p>
-			An application and a parsing library to create an electronic
-			component pick list file format designed to be human-readable and
-			completely usable in its own plain-text form. You can think of it as
-			<a href="https://daringfireball.net/projects/markdown/syntax">Markdown</a>
-			for your project's pick lists.
-		</p>
+	<p>
+		The name of the project is supposed to be a fun little combination
+		of the words in the phrase <b>Pick</b> <b>L</b>ist for
+		<b>E</b>lectronics.
+	</p>
 
-		<p>
-			The name of the project is supposed to be a fun little combination
-			of the words in the phrase <b>Pick</b> <b>L</b>ist for
-			<b>E</b>lectronics.
-		</p>
+	<p>
+		This project was conceived out of a need to create pick lists for my
+		company when we were building/assembling projects for customers,
+		allowing us to quickly create definition files that compiled all the
+		necessary information about a project's prototype or production run.
+	</p>
 
-		<p>
-			This project was conceived out of a need to create pick lists for my
-			company when we were building/assembling projects for customers,
-			allowing us to quickly create definition files that compiled all the
-			necessary information about a project's prototype or production run.
-		</p>
+	<p>
+		The first, and <a href="https://github.com/nathanpc/pickle">original
+		library and reference implementation</a>, was developed in Perl, as
+		this allowed us to quickly develop the parser for the file, since
+		it's easily parseable with regular expressions, although
+		<a href="#ports">ports have been made</a> for many other languages
+		due to some of our internal requirements and projects.
+	</p>
+</div>
 
-		<p>
-			The first, and <a href="https://github.com/nathanpc/pickle">original
-			library and reference implementation</a>, was developed in Perl, as
-			this allowed us to quickly develop the parser for the file, since
-			it's easily parseable with regular expressions, although
-			<a href="#ports">ports have been made</a> for many other languages
-			due to some of our internal requirements and projects.
-		</p>
-	</div>
+<div id="ports" class="section">
+	<h3>ports</h3>
 
-	<div id="ports" class="section">
-		<h3>ports</h3>
+	<p>
+		Although the <a href="https://github.com/nathanpc/pickle">original
+		library and reference implementation</a> was written in Perl, many
+		ports of the library, and some applications, were also developed:
+	</p>
 
-		<p>
-			Although the <a href="https://github.com/nathanpc/pickle">original
-			library and reference implementation</a> was written in Perl, many
-			ports of the library, and some applications, were also developed:
-		</p>
+	<ul>
+		<li><a href="https://github.com/nathanpc/pickle-web">Web application (PHP)</a></li>
+		<li><a href="https://github.com/nathanpc/PickLE.NET">.NET Framework 2.0</a></li>
+		<li><a href="https://github.com/nathanpc/jPickLE">Java</a></li>
+		<li><a href="https://github.com/nathanpc/libpickle">ISO C89</a></li>
+	</ul>
+</div>
 
-		<ul>
-			<li><a href="https://github.com/nathanpc/pickle-web">Web application (PHP)</a></li>
-			<li><a href="https://github.com/nathanpc/PickLE.NET">.NET Framework 2.0</a></li>
-			<li><a href="https://github.com/nathanpc/jPickLE">Java</a></li>
-			<li><a href="https://github.com/nathanpc/libpickle">ISO C89</a></li>
-		</ul>
-	</div>
+<div class="section">
+	<h3>screenshots</h3>
 
-	<div class="section">
-		<h3>screenshots</h3>
+	<p>
+		Since only the <a href="https://github.com/nathanpc/pickle-web">PHP
+		web application</a> is available publicly, here's how that specific
+		application looks like with an example document loaded:
+	</p>
 
-		<p>
-			Since only the <a href="https://github.com/nathanpc/pickle-web">PHP
-			web application</a> is available publicly, here's how that specific
-			application looks like with an example document loaded:
-		</p>
+	<table class="image-gallery">
+		<tbody>
+			<tr>
+				<td valign="top">
+					<a href="./screenshots/bootstrap-archive.png">
+						<img src="./screenshots/bootstrap-archive.png_compat.gif" alt="List of pick lists page with the Bootstrap theme">
+					</a>
+					<br>
+					<div class="caption">List of pick lists page with the Bootstrap theme</div>
+				</td>
+				<td valign="top">
+					<a href="./screenshots/bootstrap-pick.png">
+						<img src="./screenshots/bootstrap-pick.png_compat.gif" alt="Pick list page with the Bootstrap theme">
+					</a>
+					<br>
+					<div class="caption">Pick list page with the Bootstrap theme</div>
+				</td>
+				<td valign="top">
+					<a href="./screenshots/bootstrap-upload.png">
+						<img src="./screenshots/bootstrap-upload.png_compat.gif" alt="Upload page with the Bootstrap theme">
+					</a>
+					<br>
+					<div class="caption">Upload page with the Bootstrap theme</div>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top">
+					<a href="./screenshots/bootstrap-spec.png">
+						<img src="./screenshots/bootstrap-spec.png_compat.gif" alt="File specification page with the Bootstrap theme">
+					</a>
+					<br>
+					<div class="caption">File specification page with the Bootstrap theme</div>
+				</td>
+				<td valign="top">
+					<a href="./screenshots/goldenera-archive.png">
+						<img src="./screenshots/goldenera-archive.png_compat.gif" alt="List of pick lists page with the Golden Era theme">
+					</a>
+					<br>
+					<div class="caption">List of pick lists page with the Golden Era theme</div>
+				</td>
+				<td valign="top">
+					<a href="./screenshots/goldenera-pick.png">
+						<img src="./screenshots/goldenera-pick.png_compat.gif" alt="Pick list page with the Golden Era theme">
+					</a>
+					<br>
+					<div class="caption">Pick list page with the Golden Era theme</div>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top">
+					<a href="./screenshots/goldenera-upload.png">
+						<img src="./screenshots/goldenera-upload.png_compat.gif" alt="Upload page with the Golden Era theme">
+					</a>
+					<br>
+					<div class="caption">Upload page with the Golden Era theme</div>
+				</td>
+				<td valign="top">
+					<a href="./screenshots/nineties-archive.png">
+						<img src="./screenshots/nineties-archive.png_compat.gif" alt="List of pick lists page with the Nineties theme">
+					</a>
+					<br>
+					<div class="caption">List of pick lists page with the Nineties theme</div>
+				</td>
+				<td valign="top">
+					<a href="./screenshots/nineties-pick.png">
+						<img src="./screenshots/nineties-pick.png_compat.gif" alt="Pick list page with the Nineties theme">
+					</a>
+					<br>
+					<div class="caption">Pick list page with the Nineties theme</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 
-		<?= compat_image_gallery(array(
-			array('loc' => "./screenshots/bootstrap-archive.png",
-				'alt' => "List of pick lists page with the Bootstrap theme"),
-			array('loc' => "./screenshots/bootstrap-pick.png", 'alt' => "Pick list page with the Bootstrap theme"),
-			array('loc' => "./screenshots/bootstrap-upload.png", 'alt' => "Upload page with the Bootstrap theme"),
-			array('loc' => "./screenshots/bootstrap-spec.png", 'alt' => "File specification page with the Bootstrap theme"),
-			array('loc' => "./screenshots/goldenera-archive.png", 'alt' => "List of pick lists page with the Golden Era theme"),
-			array('loc' => "./screenshots/goldenera-pick.png", 'alt' => "Pick list page with the Golden Era theme"),
-			array('loc' => "./screenshots/goldenera-upload.png", 'alt' => "Upload page with the Golden Era theme"),
-			array('loc' => "./screenshots/nineties-archive.png", 'alt' => "List of pick lists page with the Nineties theme"),
-			array('loc' => "./screenshots/nineties-pick.png", 'alt' => "Pick list page with the Nineties theme")
-		)); ?>
+	<p>
+		Because the web application was built to support all kinds of
+		devices, a nice theming engine was built from scratch to skin the
+		application to the user's taste, but also to support extremely old
+		and outdated browsers, when we (only me to be fair) were feeling
+		like using a retro computer for work.
+	</p>
+</div>
 
-		<p>
-			Because the web application was built to support all kinds of
-			devices, a nice theming engine was built from scratch to skin the
-			application to the user's taste, but also to support extremely old
-			and outdated browsers, when we (only me to be fair) were feeling
-			like using a retro computer for work.
-		</p>
-	</div>
+<div class="section">
+	<h3>examples</h3>
 
-	<div class="section">
-		<h3>examples</h3>
+	<p>
+		Examples of usage of the libraries can be found in the their
+		respective repositories, since each language is different, but most
+		importantly is to show how a PickLE document is easily readable and
+		can even store the state of the pick list itself:
+	</p>
 
-		<p>
-			Examples of usage of the libraries can be found in the their
-			respective repositories, since each language is different, but most
-			importantly is to show how a PickLE document is easily readable and
-			can even store the state of the pick list itself:
-		</p>
-
-		<?php compat_code_begin(); ?>Name: Example Project
+	<pre class="code-block">Name: Example Project
 Revision: A
 Description: A very simple pick list example.
 Website: https://example.com/pickle
@@ -143,17 +197,17 @@ USB1
 ICSP1
 
 [X]	1	KEYSTONE-590-9V	"Keystone 590 - Arranged for a 9V (PP3) Battery"	[KEYSTONE-590-9V]
-BATT1<?php compat_code_end(); ?>
-	</div>
+BATT1</pre>
+</div>
 
-	<div class="section">
-		<h3>file specification</h3>
+<div class="section">
+	<h3>file specification</h3>
 
-		<p>
-			This file specification section has been lifted straight from the
-			<a href="https://github.com/nathanpc/pickle-web/blob/master/themes/_common/about_text.html">web
-			application's about page</a>:
-		</p>
+	<p>
+		This file specification section has been lifted straight from the
+		<a href="https://github.com/nathanpc/pickle-web/blob/master/themes/_common/about_text.html">web
+		application's about page</a>:
+	</p>
 
 <!-- BEGIN file specification -->
 <p>
@@ -360,23 +414,19 @@ BATT1<?php compat_code_end(); ?>
 	<strong>should</strong> be separated by spaces.
 </p>
 <!-- END file specification -->
-	</div>
+</div>
 
-	<div class="section">
-		<h3>download</h3>
+<div class="section">
+	<h3>download</h3>
 
-		<ul>
-			<li><a href="https://metacpan.org/dist/PickLE">CPAN</a></li>
-			<li><a href="https://github.com/nathanpc/ascii-image">Source code (Perl)</a></li>
-		</ul>
+	<ul>
+		<li><a href="https://metacpan.org/dist/PickLE">CPAN</a></li>
+		<li><a href="https://github.com/nathanpc/ascii-image">Source code (Perl)</a></li>
+	</ul>
 
-		<p>
-			For links to download any of the ports of the parser or application
-			you should consult the <a href="#ports">ports section</a> of this
-			page.
-		</p>
-	</div>
-
-	<?php include_template('footer'); ?>
-</body>
-</html>
+	<p>
+		For links to download any of the ports of the parser or application
+		you should consult the <a href="#ports">ports section</a> of this
+		page.
+	</p>
+</div>
