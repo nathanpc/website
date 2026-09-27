@@ -64,7 +64,7 @@ function compat_image($loc, $alt, $props = [], $link = true) {
 		$props_html .= "$key=\"$value\" ";
 
 	// Get the final HTML element.
-	$html = "<img src=\"${img_loc}_compat.gif\" alt=\"$alt\" $props_html>";
+	$html = "<img src=\"{$img_loc}_compat.gif\" alt=\"$alt\" $props_html>";
 	if ($link)
 		return "<a href=\"$img_loc\">$html</a>";
 	return $html;
@@ -109,7 +109,11 @@ function compat_image_gallery($images) {
  * @param string $lang Programming language code for syntax highlighting.
  */
 function compat_code_begin($lang = null) {
-	echo "<pre class=\"code-block\" width=\"600\"><code>";
+	$lang_class = '';
+	if (!is_null($lang))
+		$lang_class = " sh_$lang";
+
+	echo "<pre class=\"code-block$lang_class\">";
 	ob_start();
 }
 
@@ -119,5 +123,5 @@ function compat_code_begin($lang = null) {
  */
 function compat_code_end() {
 	echo htmlentities(ob_get_clean());
-	echo "</code></pre>";
+	echo "</pre>";
 }
