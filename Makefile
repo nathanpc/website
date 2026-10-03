@@ -29,7 +29,7 @@ website:
 	$(CURL) -o "$(HTDOCS)/robots.txt" 'https://raw.githubusercontent.com/ai-robots-txt/ai.robots.txt/refs/heads/main/robots.txt'
 
 blog:
-	find $(HTDOCS)/log/ -iname '*.cnt.html' -type f -exec $(BINDIR)/update-page.sh {} \;
+	find $(PHLOG)/ -iname '*.cnt.html' -type f -exec $(BINDIR)/update-page.sh -b {} \;
 	$(BINDIR)/update-logs-indexes.pl
 
 sitemap: blog
