@@ -12,43 +12,24 @@ use autodie;
 use File::Basename;
 use Cwd 'abs_path';
 
-# Open file for writing.
-my $blog_folder = dirname(dirname(abs_path($0))) . '/gopher/phlog/';
-my $index_fn = $blog_folder . '/index.php';
-open(my $index_fh, '>', $index_fn);
-print "Writing blog index to $index_fn\n";
+print STDERR "Building blog index\n";
 
 # Print header part of the file.
-print $index_fh <<"HEADER";
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-	<?php include __DIR__ . '/../../templates/head.php'; ?>
-
-	<!-- Page information. -->
-	<title>Nathan's random musings</title>
-	<meta name="description" content="Nathan's personal blog. Where you can follow his adventures in the world of technology.">
-</head>
-<body>
-	<?php include_template('header'); ?>
-	
-	<div class="section">
-		<p>
-			My stream of thought brought to you in rich text, and since 2025 in
-			glourious <a href="https://github.com/nathanpc/almost-plain-text">almost
-			plain text</a>! This log of my activities
-			<a href="gopher://nathancampos.me/1/phlog/">can also be enjoyed</a>
-			using the much better <a href="https://en.wikipedia.org/wiki/Gopher_(protocol)">Gopher
-			protocol</a>.
-		</p>
-	</div>
+print <<'HEADER';
+<!--
+Nathan's random musings
+Nathan's personal blog. Where you can follow his adventures in the world of technology.
+-->
 
 HEADER
 
 # Get list of entries in blog directory.
+my $blog_folder = dirname(dirname(abs_path($0))) . '/gopher/phlog/';
 opendir(my $blog_dir, $blog_folder);
 my @entries = reverse(sort(readdir($blog_dir)));
 closedir($blog_dir);
+
+# Go through entries to create the index.
 my $last_year = '';
 foreach (@entries) {
 	# Filter only directories.
@@ -60,8 +41,8 @@ foreach (@entries) {
 		}
 
 		# Ignore folders without a blog post.
-		my $post_file = "$dir/content.php";
-		next if (!-e $post_file);
+		my $post_file = "$dir/index.cnt.html";
+		next if ((!-e $post_file) or (!-e "$dir/index.html"));
 
 		# Get parts.
 		if (m/^(?<year>[0-9]{4})-(?<month>[0-9]{2})-(?<day>[0-9]{2})_(?<slug>.+)/i) {
@@ -71,41 +52,29 @@ foreach (@entries) {
 			# Print year section if needed.
 			if ($+{year} ne $last_year) {
 				$last_year = $+{year};
-				print $index_fh "\n\t<h3 class=\"post-year\">" . $last_year .
-					"</h3>\n\n";
+				print "\n\t<h3 class=\"post-year\">$last_year</h3>\n\n";
 			}
 
 			# Get post title.
 			open(my $fh, '<', $post_file);
+			<$fh>;
 			my $title = <$fh>;
 			chomp $title;
-			$title =~ s/\s*\<\!--\s+//;
-			$title =~ s/\s+--\>\s*//;
 			close($fh);
 
 			# Print post entry.
-			print "Adding $date - $title... ";
-			print $index_fh <<"POST";
+			print STDERR "Adding $date - $title... ";
+			print <<"POST";
 	<div class="post-listing">
 		<span class="published-date">$date</span>
-		<a class="title" href="<?= blog_href('$date', '$slug') ?>">
+		<a class="title" href="/log/$date/$slug">
 			$title
 		</a>
 	</div>
 POST
-			print "ok\n";
+			print STDERR "ok\n";
 		}
 	}
 }
 
-# Print page footer.
-print $index_fh <<FOOTER;
-
-	<?php include_template('footer'); ?>
-</body>
-</html>
-FOOTER
-
-# Close file handle and exit.
-close($index_fh);
-print "Done!\n";
+print STDERR "Done!\n";

@@ -29,10 +29,12 @@ website:
 	$(CURL) -o "$(HTDOCS)/robots.txt" 'https://raw.githubusercontent.com/ai-robots-txt/ai.robots.txt/refs/heads/main/robots.txt'
 
 blog:
-	find $(PHLOG)/ -iname '*.cnt.html' -type f -exec $(BINDIR)/update-page.sh -b {} \;
-	$(BINDIR)/update-logs-indexes.pl
+	find $(PHLOG)/ -iname 'index.cnt.html' -type f -exec $(BINDIR)/update-page.sh -b {} \;
+	$(BINDIR)/build-phlog-index.pl
+	$(BINDIR)/build-blog-index.pl > $(PHLOG)/blog-index.cnt.html
+	$(BINDIR)/make-page.sh $(PHLOG)/blog-index.cnt.html > $(PHLOG)/index.html
 
-sitemap: blog
+sitemap:
 	$(BINDIR)/update-sitemap.sh
 
 $(HTDOCS)/robots.txt:
