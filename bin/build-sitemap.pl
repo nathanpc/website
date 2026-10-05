@@ -41,11 +41,8 @@ while (my $path = <STDIN>) {
 	$url =~ s/index\.($page_ext)$//;
 
 	# Clean up the path for the blog.
-	$url =~ s|/gopher/phlog|log|;
-	
-	# Handle the special case of blog entries.
-	if ($url =~ m|log/[^/]+/content\.($page_ext)$|) {
-		$url =~ s/content.($page_ext)$//;
+	if ($url =~ m|/gopher/phlog|) {
+		$url =~ s|/gopher/phlog|log|;
 		$url = join('/', split(/_/, $url, 2));
 	}
 

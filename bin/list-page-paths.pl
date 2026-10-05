@@ -21,7 +21,7 @@ find({ wanted => \&process_file, follow => 0, no_chdir => 1 },
 
 # Processes all files found in the website folder.
 sub process_file {
-	if (m!(index|/phlog/[^/]+/content)\.(php|html?|asp)$!i) {
+	if (m!index\.(php|html?|asp)$!i) {
 		print "$_\n";
 	}
 }
