@@ -12,7 +12,7 @@ like me and want to VPN your retro hardware, it's the best VPN software
 available.
 
 I currently have 2 SoftEther servers running on the infrastructure that I manage
-and noticying that they had a Docker container available, I decided to try it
+and noticing that they had a Docker container available, I decided to try it
 out, since it may make setup, migration and backup of the server a lot easier in
 the future.
 

@@ -1,4 +1,7 @@
-<!-- Compiling SoftEther VPN on a modern environment -->
+<!--
+Compiling SoftEther VPN on a modern environment
+Blog post published on 2026-07-07. Also available on Gopher: gopher://nathancampos.me/0/phlog/2026-07-07_softether-penitence/post.txt
+-->
 
 <p>This all started with a very simple need to run SoftEther VPN on a Docker
 container <a href="https://github.com/SoftEtherVPN/SoftetherVPN-docker#usage-docker-run">as
@@ -12,7 +15,7 @@ apart from this, if you are like me and want to VPN your retro hardware, it's
 the best VPN software available.</p>
 
 <p>I currently have 2 SoftEther servers running on the infrastructure that I
-manage and noticying that they had a Docker container available, I decided to
+manage and noticing that they had a Docker container available, I decided to
 try it out, since it may make setup, migration and backup of the server a lot
 easier in the future.</p>
 
@@ -36,7 +39,7 @@ now to the latest stable release.</p>
 issue that will become very common with old C code bases as C23 support becomes
 mainstream and the default option in most C compilers:</p>
 
-<?php compat_code_begin(); ?> > [builder 5/5] RUN cd SoftEtherVPN_Stable &&  git submodule init &&   git submodule update && ./configure &&  make:
+<pre class="code-block"> > [builder 5/5] RUN cd SoftEtherVPN_Stable &&  git submodule init &&   git submodule update && ./configure &&  make:
 0.715 In file included from ./src/Mayaqua/Mayaqua.h:334:
 0.715 ./src/Mayaqua/MayaType.h:262:33: error: 'bool' cannot be defined via 'typedef'
 0.715   262 | typedef unsigned int            bool;
@@ -45,7 +48,7 @@ mainstream and the default option in most C compilers:</p>
 0.715 ./src/Mayaqua/MayaType.h:262:1: warning: useless type name in empty declaration
 0.715   262 | typedef unsigned int            bool;
 0.715       | ^~~~~~~
-0.771 make: *** [Makefile:111: tmp/objs/Mayaqua/Cfg.o] Error 1<?php compat_code_end(); ?>
+0.771 make: *** [Makefile:111: tmp/objs/Mayaqua/Cfg.o] Error 1</pre>
 
 <p>The developers of SoftEther, due to its Win32 origins, decided to ensure they
 had a compatible boolean type under UNIX, as they may be abusing the size of a
@@ -61,13 +64,13 @@ to it, just like you cannot <code>typedef</code> to an <code>if</code> or a
 <p>First I tried to add a C standard directive to instruct the compiler to use an
 older standard, just <a href="https://github.com/NixOS/nixpkgs/pull/503840/changes/4f7f556db22ae7cf4787549dc7b45fafb0ec8d54">like
 the good folks over at NixOS did</a>. In order to do this I decided to add
-suffixes to the <code>make</code> command, like so:
+suffixes to the <code>make</code> command, like so:</p>
 
-<?php compat_code_begin('bash'); ?>RUN cd SoftEtherVPN_Stable &&\
+<pre class="code-block sh_sh">RUN cd SoftEtherVPN_Stable &&\
         git submodule init &&\
         git submodule update &&\
         ./configure &&\
-        make CFLAGS='-std=gnu17' CXXFLAGS='-std=gnu17'<?php compat_code_end(); ?>
+        make CFLAGS='-std=gnu17' CXXFLAGS='-std=gnu17'</pre>
 
 <p>This did not work and produced the exact same errors as above, meaning my
 directive was being completely ignored, specially when looking at
@@ -98,11 +101,22 @@ guidelines</a> that the project must support GCC 2.x, in the makefiles I guarded
 the direction to add the C standard flag only when GCC version 14 and above was
 used:</p>
 
-<?php compat_code_begin('make'); ?>ifeq "$(shell expr `gcc -dumpversion | cut -f1 -d.` \>= 14)" "1"
+<pre class="code-block sh_makefile">ifeq "$(shell expr `gcc -dumpversion | cut -f1 -d.` \>= 14)" "1"
     OPTIONS_COMPILE += -std=gnu17
-endif<?php compat_code_end(); ?>
+endif</pre>
 
 I have submitted a <a href="https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/pull/33">pull
 request with the workaround</a>, and I will use this pull request to gauge if
 the maintainers are still active on the project. If it never gets merged I will
 assume the project is stalled and prepare for the inevitable move to version 5.</p>
+
+<link type="text/css" rel="stylesheet" href="/assets/shjs/sh_default.css">
+<script type="text/javascript" src="/assets/shjs/sh_main.min.js"></script>
+<script type="text/javascript" src="/assets/shjs/lang/sh_sh.min.js"></script>
+<script type="text/javascript">
+if (window.addEventListener){
+	window.addEventListener('load', sh_highlightDocument);
+} else {
+	window.attachEvent('onload', sh_highlightDocument);
+}
+</script>

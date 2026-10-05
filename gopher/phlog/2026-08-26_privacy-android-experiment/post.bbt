@@ -12,7 +12,7 @@ The first step towards installing this custom ROM involved removing all my accou
 
 Following the [url=https://support.fairphone.com/hc/en-us/articles/10492476238865-How-to-unlock-or-lock-your-Fairphone-s-bootloader]official bootloader unlocking guide[/url] from Fairphone was straightforward. The only issue I had was that my device wasn't recognized by Windows when it was in bootloader mode. To fix this I had to use [url=https://community.e.foundation/t/solved-windows-does-not-see-my-phone-in-fastboot-mode/69887]weird workaround using Windows Update[/url] to ensure that I had the correct drivers. I couldn't find these drivers anywhere on the internet for download without using Windows Update.
 
-After installing the drivers, I was able to successfully unlock my bootloader and procceed with the installation of /e/OS using the command-line method, which I must admit was very easy compared to what I was used to when it comes to custom ROMs in the past.
+After installing the drivers, I was able to successfully unlock my bootloader and proceed with the installation of /e/OS using the command-line method, which I must admit was very easy compared to what I was used to when it comes to custom ROMs in the past.
 
 [h2]Rooting the device[/h2]
 
@@ -51,7 +51,7 @@ The stock applications that I have removed were:
 
 [h2]Applications[/h2]
 
-Here is a non-exaustive list of applications that I have installed so far to use on a daily basis during this experiment:
+Here is a non-exhaustive list of applications that I have installed so far to use on a daily basis during this experiment:
 
 [list]
   [*]Web Browser: IronFox

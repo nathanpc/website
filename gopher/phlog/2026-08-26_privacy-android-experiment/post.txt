@@ -35,7 +35,7 @@ couldn't find these drivers anywhere on the internet for download without using
 Windows Update.
 
 After installing the drivers, I was able to successfully unlock my bootloader
-and procceed with the installation of /e/OS using the command-line method, which
+and proceed with the installation of /e/OS using the command-line method, which
 I must admit was very easy compared to what I was used to when it comes to
 custom ROMs in the past.
 
@@ -96,7 +96,7 @@ The stock applications that I have removed were:
 Applications
 ------------
 
-Here is a non-exaustive list of applications that I have installed so far to use
+Here is a non-exhaustive list of applications that I have installed so far to use
 on a daily basis during this experiment:
 
   - Web Browser: IronFox
