@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<!-- Character set. -->
+<meta charset="UTF-8">
+
+<!-- Mobile definitions. -->
+<meta name="viewport"
+	content="width=600, initial-scale=1, user-scalable=1" />
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<!--[if IE]>
+<link rel="stylesheet" href="/assets/css/ie.css">
+<![endif]-->
+
+<!-- Page information. -->
+<title>Generic Chinese MP3 Player Teardown - Nathan Campos</title>
+<meta name="description" content="Blog post published on 2014-05-16"></head>
+<body>
+<div id="header">
+	<!-- Title header block. -->
+	<div id="title-head">
+		<h1>Nathan Campos</h1>
+<div id="breadcrumbs">
+	<span class="sep">/</span> <a class="label" href="/log">log</a> <span class="sep">/</span> <a class="label" href="/log/2014-05-16">2014-05-16</a> <span class="sep">/</span> <a class="label" href="/log/2014-05-16/generic-chinese-mp3-player-teardown">generic-chinese-mp3-player-teardown</a>
+</div>
+	</div> <!-- #title-head -->
+
+	<!-- Navigation bar. -->
+	<div id="navbar">
+		<span class="item"><a href="/">index</a></span>
+		<span class="spacer">|</span>
+		<span class="item"><a href="gopher://nathancampos.me:70/1/">gopher</a></span>
+		<span class="spacer">|</span>
+		<span class="item"><a href="/projects">projects</a></span>
+		<span class="spacer">|</span>
+		<span class="item"><a href="/log">log</a></span>
+		<span class="spacer">|</span>
+		<span class="item"><a href="/links">links</a></span>
+		<span class="spacer">|</span>
+		<span class="item"><a href="//wiki.nathancampos.me/">wiki</a></span>
+		<span class="spacer">|</span>
+		<span class="item"><a href="//innoveworkshop.com/">work</a></span>
+		<span class="spacer">|</span>
+		<span class="item"><a href="/meta">meta</a></span>
+		<span class="spacer">|</span>
+		<span class="item"><a href="/contact">contact</a></span>
+	</div>
+
+	<hr>
+</div> <!-- #header -->
+
+<div id="content">
+<div id="blog-post" class="section">
+	<h2>Generic Chinese MP3 Player Teardown</h2>
+	<div id="published-date">2014-05-16
+</div>
+<!-- Generic Chinese MP3 Player Teardown -->
+
+<p>As I've described in <a href="/post/2014-05-11/Unbelievable_Prices.html">Unbelievable Prices</a>, I bought a crappy chinese MP3 player to use as a "true" sound source (instead of the function generator I use while early-testing my audio projects) for testing my audio circuits without having to worry about accidentally shorting 12V into my iPod's headphone jack or something like that while probing around.</p>
+
+<p>Yesterday it arrived and as it was expected, it's the best of Shenzhen. Horrible plastics and build quality, the buttons are super stiff, and overall a shitty product as it was expected to be, but since I'm only going to use it for testing, I don't care. Here are some pictures of the "beautiful" thing:
+
+<table class="image-gallery">
+<tr>
+<td valign="top">
+<a href="./unboxed.jpg"><img src="./unboxed.jpg_compat.gif" alt="Unboxing this cheap little thing" ></a>
+<br>
+<div class="caption">Unboxing this cheap little thing</div>
+</td><td valign="top">
+<a href="./disassembled.jpg"><img src="./disassembled.jpg_compat.gif" alt="Taking it to bits" ></a>
+<br>
+<div class="caption">Taking it to bits</div>
+</td><td valign="top">
+<a href="./front.jpg"><img src="./front.jpg_compat.gif" alt="Front side" ></a>
+<br>
+<div class="caption">Front side</div>
+</td></tr>
+<tr>
+<td valign="top">
+<a href="./left-side.jpg"><img src="./left-side.jpg_compat.gif" alt="Left side" ></a>
+<br>
+<div class="caption">Left side</div>
+</td><td valign="top">
+<a href="./right-side.jpg"><img src="./right-side.jpg_compat.gif" alt="Right side" ></a>
+<br>
+<div class="caption">Right side</div>
+</td></tr>
+</table>
+<p>As you can see it's a typical chinese product. The LiPo battery has no markings, except for a weird XI logo, it doesn't look like a protected pack and the flimsy wires that connect it to the main board can snap off at any second and short the thing out.</p>
+
+<a href="./board-view.jpg"><img src="./board-view.jpg_compat.gif" alt="Board view" ></a>
+<p>Right next to what looks like the main processor, which sadly I couldn't find any information about it, there's a very nicely heat-shrunk clock crystal. On the center of the board you can see a generic <a href="http://www.ti.com/lit/ds/symlink/lm4871.pdf">4871</a> audio power amplifier, and on the left side there's a <a href="http://www.kingroad-china.net/Uploadfiles/2010763471154996.pdf">BK1080</a> FM receiver IC.</p>
+
+<a href="./top-board.jpg"><img src="./top-board.jpg_compat.gif" alt="Top board view" ></a>
+<p>On the other side of the board all you can see is the horrible LCD and the shittiest buttons you can buy in the Shenzhen market. </p>
+
+<p style="font-size: 0.8em">
+	This article was imported from <a href="http://currentflow.net/">my old blog
+	</a>. Some things may be broken.
+</p>
+
+</div> <!-- .content -->
+<div id="footer">
+	<hr>
+	<div class="copyright">
+		Nathan Campos &#169; 2024-2026
+	</div>
+	<div class="last-modified">
+		Last modified: 2026-10-05 10:44
+	</div>
+</div>
+</body>
+</html>

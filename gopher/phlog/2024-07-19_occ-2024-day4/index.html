@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<!-- Character set. -->
+<meta charset="UTF-8">
+
+<!-- Mobile definitions. -->
+<meta name="viewport"
+	content="width=600, initial-scale=1, user-scalable=1" />
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<!--[if IE]>
+<link rel="stylesheet" href="/assets/css/ie.css">
+<![endif]-->
+
+<!-- Page information. -->
+<title>Old Computer Challenge 2024 - Day 4 - Nathan Campos</title>
+<meta name="description" content="Blog post published on 2024-07-19"></head>
+<body>
+<div id="header">
+	<!-- Title header block. -->
+	<div id="title-head">
+		<h1>Nathan Campos</h1>
+<div id="breadcrumbs">
+	<span class="sep">/</span> <a class="label" href="/log">log</a> <span class="sep">/</span> <a class="label" href="/log/2024-07-19">2024-07-19</a> <span class="sep">/</span> <a class="label" href="/log/2024-07-19/occ-2024-day4">occ-2024-day4</a>
+</div>
+	</div> <!-- #title-head -->
+
+	<!-- Navigation bar. -->
+	<div id="navbar">
+		<span class="item"><a href="/">index</a></span>
+		<span class="spacer">|</span>
+		<span class="item"><a href="gopher://nathancampos.me:70/1/">gopher</a></span>
+		<span class="spacer">|</span>
+		<span class="item"><a href="/projects">projects</a></span>
+		<span class="spacer">|</span>
+		<span class="item"><a href="/log">log</a></span>
+		<span class="spacer">|</span>
+		<span class="item"><a href="/links">links</a></span>
+		<span class="spacer">|</span>
+		<span class="item"><a href="//wiki.nathancampos.me/">wiki</a></span>
+		<span class="spacer">|</span>
+		<span class="item"><a href="//innoveworkshop.com/">work</a></span>
+		<span class="spacer">|</span>
+		<span class="item"><a href="/meta">meta</a></span>
+		<span class="spacer">|</span>
+		<span class="item"><a href="/contact">contact</a></span>
+	</div>
+
+	<hr>
+</div> <!-- #header -->
+
+<div id="content">
+<div id="blog-post" class="section">
+	<h2>Old Computer Challenge 2024 - Day 4</h2>
+	<div id="published-date">2024-07-19
+</div>
+<!-- Old Computer Challenge 2024 - Day 4 -->
+
+<p>Another day, another update. Today I worked a bit more on the code for
+<a href="https://github.com/nathanpc/rodent">my Gopher client</a>, it's still in
+it's embryonic where the API for the main library is being built, although I'm
+getting closer to a point where I may start working on the actual interface of
+the application itself. Hopefully I'll be able to do so tomorrow.</p>
+
+<p>While transferring a couple of files to a USB flash drive using the Power Mac
+G5, I was reminded of how slow USB 2.0 speeds actually are. I've been living
+with USB 3.0+ for so long that I did forget actually how painfully slow things
+were back in the day (when I thought this was fast). I'm never complaining about
+USB 3.0 speeds ever again.</p>
+
+<a href="./usb2-copy.png"><img src="./usb2-copy.png_compat.gif" alt="Agonizing transfer at USB 2.0 speeds" ></a>
+<p>While following the adventures of <a href="http://sizeof.cat/post/old-computer-challenge-2024/">
+sizeof(cat)</a> and <a href="http://portal.mozz.us/gemini/gemini.jasonsanta.xyz/occ-day-1.gmi">
+jasonsanta</a> I got in the mood of playing with a netbook as well. I dug my
+Eee PC 1005PE from storage and began the process of preparing it for the
+challenge, which would've involved swapping in an SSD to get some extra
+performance, although upon talking about it on IRC <code>unsigned</code>
+(sizeof(cat)) reminded me that after all this time it would've been advisable to
+change the thermal compound of the CPU, which was a very good idea after
+all!</p>
+
+<a href="./eeepc-teardown.jpeg"><img src="./eeepc-teardown.jpeg_compat.gif" alt="The insides of the Eee PC 1005PE" ></a>
+<p>As I began tearing it down, <a href="https://www.ifixit.com/Guide/Asus+Eee+PC+1005PEB+Hard+Drive+Replacement/24933">
+a process</a> that's a lot more enjoyable than in the PowerBook G4, I was glad I
+opened it up. The thermal pad for the CPU had hardened and was extremely dry, to
+the point where it began crumbling. The problem was that I wasn't expecting such
+a thick thermal pad, even when you looked at the profile of the board you should
+see that there was a substantial gap between the CPU and the heatsink, so a
+proper thermal pad was the only way to actually get them to bond together.
+Thankfully I had a box of them, but of a much thinner variety (for regular
+electronics work), so I've done what many in the past have been crucified for...
+stacked them to bridge the gap. It's not pretty, but it sure is functional,
+while installing drivers and applications, constantly leaving the CPU at 100%,
+the highest temperature recorded by <a href="https://www.cpuid.com/softwares/hwmonitor.html">
+HWMonitor</a> was 75&deg;C, which is perfectly fine by me.</p>
+
+<a href="./thermal-pad-crime.jpeg"><img src="./thermal-pad-crime.jpeg_compat.gif" alt="The crime against all that's holy" ></a>
+<p>All in all I had a great time working on this old netbook and installing all
+of its drivers and must-have applications. It sure is always quite a nostalgia
+trip to install Visual Studio 2010. Let's hope tomorrow I'll do some coding in
+it.</p>
+
+</div> <!-- .content -->
+<div id="footer">
+	<hr>
+	<div class="copyright">
+		Nathan Campos &#169; 2024-2026
+	</div>
+	<div class="last-modified">
+		Last modified: 2026-10-05 10:44
+	</div>
+</div>
+</body>
+</html>
