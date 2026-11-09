@@ -1,0 +1,21 @@
+# Error documents.
+ErrorDocument 404 /errors/404.php
+ErrorDocument 500 /errors/500.php
+
+# Protect the .htaccess file.
+<FilesMatch "\.htaccess$">
+	Order Allow,Deny
+	Deny from all
+</FilesMatch>
+
+# Protect .gitignore files.
+<FilesMatch "\.gitignore$">
+	Order Allow,Deny
+	Deny from all
+</FilesMatch>
+
+# URL rewrites.
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+	RewriteRule ^log/([0-9\-]+)/([0-9a-zA-Z\-_]+)/?$ log/$1_$2
+</IfModule>
